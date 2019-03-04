@@ -1,0 +1,104 @@
+data=[
+   
+   {
+        "name": "Arpan Ghoshal",
+        "sex": "male",
+        "email": "arpanghoshal3@gmail.com",
+        "dob": "17/09/1997",
+        "hobbies": "FPS",
+        "bloodGroup": "B+",
+        "age": "21",
+        "password": "Arp@1997"
+
+    },
+
+    {
+        "name": "Rebecca Monero",
+        "sex": "female",
+        "email": "rebeca545@gmail.com",
+        "dob": "10/10/1998",
+        "hobbies": "Dancing",
+        "bloodGroup": "B-",
+        "age": "20",
+        "password": "Rebecc@@545"
+    },
+
+    {
+        "name": "Sam Fisher",
+        "sex": "male",
+        "email": "splinterCell@gmail.com",
+        "dob": "05/04/1993",
+        "hobbies": "Football",
+        "bloodGroup": "O-",
+        "age": "26",
+        "password": "FisherSam#1818"
+    },
+
+    {
+        "name": "Sandy Shaha",
+        "sex": "other",
+        "email": "IamSandy@gmail.com",
+        "dob": "06/05/1997",
+        "hobbies": "Gardening",
+        "bloodGroup": "A-",
+        "age": "21",
+        "password": "IamSandy@420"
+    },
+
+    {
+        "name": "Rajesh Menon",
+        "sex": "male",
+        "email": "menonmenonyoyo@gmail.com",
+        "dob": "16/03/2001",
+        "hobbies": "Cricket",
+        "bloodGroup": "AB+",
+        "age": "18",
+        "password": "menon@Rage322"
+    },
+
+    {
+        "name": "Samrat Das",
+        "sex": "male",
+        "email": "xyber@gmail.com",
+        "dob": "13/05/2001",
+        "hobbies": "Singing",
+        "bloodGroup": "AB+",
+        "age": "18",
+        "password": "XyberIsB@ck2001"
+    },
+
+    {
+        "name": "Sourav Gosh",
+        "sex": "male",
+        "email": "devilPain@gmail.com",
+        "dob": "17/07/1998",
+        "hobbies": "Cricket",
+        "bloodGroup": "AB-",
+        "age": "20",
+        "password": "itsDevl#619"
+    },
+
+    {
+        "name": "Arpita Sen",
+        "sex": "female",
+        "email": "arpita101@gmail.com",
+        "dob": "12/10/1997",
+        "hobbies": "Collecting",
+        "bloodGroup": "O-",
+        "age": "21",
+        "password": "Arpita$1*2"
+    },
+
+    {
+        "name": "Ankita Mishra",
+        "sex": "other",
+        "email": "anikita5@gmail.com",
+        "dob": "22/05/1980",
+        "hobbies": "Gardening",
+        "bloodGroup": "A+",
+        "age": "49",
+        "password": "TheNewMe@Anikta2019"
+    }
+
+
+];

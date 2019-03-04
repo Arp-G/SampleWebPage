@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Arpan">
+  <meta name="description" content="Practice HTML">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="Practice.js"></script>
+  <script src="PasswordCipher.js"></script>
+  <script type="text/javascript" src="UserData.json"></script>
+  <title>HTML Practice</title>
+  <style>
+
+  input[type='range'] {
+      overflow: hidden;
+      width: 150px;
+      -webkit-appearance: none;
+      background-color: white;
+    }
+
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background: #434343;
+      box-shadow: -80px 0 0 80px #43e5f7;
+    }
+
+    .usersTable tr:nth-child(even){
+      background-color: lightgrey;
+    }
+
+    .usersTable tr:nth-child(odd){
+      background-color: white;
+    }
+    
+ 
+    .usersTable th {
+      background-color: black;
+      color: white;
+    }
+    
+    .usersTable tfoot {
+      background-color: orange;
+    }
+    
+    .usersTable table,.usersTable tr,.usersTable td,.usersTable th {
+      border: 2px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    
+    .usersTable th {
+      background-color: black;
+      color: white;
+    }
+
+    .usersTable tbody>tr:hover{
+      background-color: yellow;
+    }
+
+   
+    
+    .item {
+      box-sizing: border-box;
+      overflow: auto;         /* Handle overflow for smaller devices by adding scroll bars*/
+      padding: 20px;
+      border: 2px solid black;
+      margin: 10px;
+      background-image: url("dynamic-style.png");
+
+    }
+
+    .container{
+      width:90vw;
+      height:90vw;
+      position: absolute;
+      top:100px;    /* position div container for all devices*/
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .item:hover{
+     background:url("vintage-concrete.png");
+    }
+
+
+    #heading{
+      position: relative;
+      background-color: white;
+      left:45vw;
+      display: inline-block;
+      animation: headingAnimation 5s linear infinite;
+      box-sizing: border-box;
+      background-image: url("dynamic-style.png");
+      font: italic bold 12px/30px Georgia, serif
+
+    }
+
+    @keyframes backgroundAnimation{
+      from { background-position: 0 0; }
+      to { background-position: -400px 0; }
+    }
+
+    body{
+      background-image:url("dynamic-style1.png");
+      animation: backgroundAnimation 20s linear infinite;
+    }
+
+    @keyframes headingAnimation{
+
+      0%,100%{ 
+        border-top: 20px solid red;
+        border-right: 20px solid green;
+        border-bottom: 20px solid blue;
+        border-left: 20px solid yellow; 
+        
+      }
+
+      25%{ 
+        border-top: 20px solid green;
+        border-right: 20px solid blue;
+        border-bottom: 20px solid yellow;
+        border-left: 20px solid red;
+      }
+
+      50%{ 
+        border-top: 20px solid blue;
+        border-right: 20px solid yellow;
+        border-bottom: 20px solid red;
+        border-left: 20px solid green;
+      }
+
+      75%{ 
+        border-top: 20px solid yellow;
+        border-right: 20px solid red;
+        border-bottom: 20px solid green;
+        border-left: 20px solid blue; 
+      }
+    }
+
+      .usersTable tfoot td{
+      background-color: brown;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h2><span id="heading">User Registration portal</span></h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 item">
+        <h3><b>Registration Form:</b></h3>
+        <form  action="https://www.google.com" target="_blank">
+          <fieldset>
+            <legend>User Registration</legend>
+            <table class="alignmentTable">
+              <tr>
+            <td><label for="username">Name:</label></td>
+            <td><input type="text" tabindex="1" placeholder="name here" id="username" required></td>
+            </tr>
+            <tr>
+            <td>
+            <b>Sex: </b></td>
+            <td>
+             <input type="radio" name="sex" tabindex="2" value="male" class="sex" checked>
+
+             Male
+          <input type="radio" name="sex" value="female" class="sex" >Female
+          <input type="radio" name="sex" value="other" class="sex">Other</td>
+          </tr>
+          <tr>
+            <td>
+            <label for="email">Email:</label>
+          </td>
+          <td>
+            <input type="email" tabindex="3" placeholder="email here" id="email">
+            </td>
+          </tr>
+            <tr>
+            <td>
+            <label for="DOB"><span class="dobAge">DOB:</span></label>
+          </td>
+          <td>
+            <input type="date" tabindex="4" onchange="setAge(this)" id="DOB" title="only users between age 18 to 60 are allowed">
+
+            </td>
+          </tr>
+
+            <tr>
+              <td>
+            <label for="hobbies">Hobbies:</label>
+          </td>
+          <td>
+            <select tabindex="5" id="hobbies">
+              <optgroup label="Sports">
+                <option value="Football">Football</option>
+                <option value="Cricket">Cricket</option>
+                <option value="Basketball">Basketball</option>
+              </optgroup>
+              <optgroup label="Computer Games">
+                <option value="FPS">FPS Games</option>
+                <option value="RPG">RPG Games</option>
+                <option value="Strategy">Strategy Games</option>
+                <option value="Racing">Racing Games</option>
+                <option value="casual">Casual Games</option>
+              </optgroup>
+              <optgroup label="Others">
+                <option value="Dancing">Dancing</option>
+                <option value="Singing">Singing</option>
+                <option value="Gardening">Gardening</option>
+                <option value="Collecting">Collecting</option>
+              </optgroup>
+              <optgroup label="Reading">
+                <option value="Story Books">Story Books</option>
+                <option value="Magazines">Magazines</option>
+                <option value="Science">Science/Tech</option>
+              </optgroup>
+            </select>
+            </td>
+          </tr>
+            <tr>
+              <td>
+            <label for="BloodGroup">Blood Group:</label>
+          </td>
+            <td>
+            <input type="text" tabindex="6" id="BloodGroup" list="Bldgrp">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <label for="age" class="dobAge">Age:</label>
+          </td>
+          <td>
+            <input type="range" tabindex="7" id="age" value="18" title="only users between age 18 to 60 are allowed" disabled><span id="agehere"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <label for="password">Password:</label>
+          </td>
+          <td>
+            <input type="password" tabindex="8" id="password" placeholder="password here" title="Password must be atleast 8 characters and atmost 30 characters long, Password must contain atleast one upper case letter , one lower case letter, one number and one special character" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$" required>
+            </td>
+          </tr>
+          <tr><td><br></td><td><br></td></tr>
+          <tr><td><br></td><td><br></td></tr>
+          <tr>
+            <td>
+            <button type="submit" tabindex="9">Submit</button>  
+            </td>
+            <td>         
+            <button type="reset" tabindex="10" id="userTableReset">Reset</button>
+          </td>
+        </tr>
+
+     
+     <tr><td><br></td><td><br></td></tr>
+
+    
+  </table>
+          </fieldset>
+          <datalist id="Bldgrp">
+            <option value="A+"></option>
+            <option value="A-"></option>
+            <option value="B+"></option>
+            <option value="B-"></option>
+            <option value="O+"></option>
+            <option value="O-"></option>
+            <option value="AB+"></option>
+            <option value="AB-"></option>
+          </datalist>
+        </form>
+      </div>
+
+      <div class="col-sm-4 item">
+        <h3><b>Search User:</b></h3>
+
+        <form id="userSearchForm" onsubmit="return searchUser()" action="https://www.google.com" target="_blank">
+        
+          Enter email to search :
+          <br>
+       
+          <input type="email" tabindex="11" placeholder="enter email here" id="emailToSearch">
+        
+          <button type="submit"  tabindex="12"><b>Search !</b></button>
+      
+
+          <div id="searchResults">
+            <h5></h5>
+            <p id="searchName"></p>
+            <p id="searchSex"></p>
+            <p id="searchEmail"></p>
+            <p id="searchDob"></p>
+            <p id="searchBloodGroup"></p>
+            <p id="searchHobbies"></p>
+            <p id="searchAge"></p>
+            <p id="searchPassword"></p>
+          </div>
+          <button type="button" id="clearSearchResults"  tabindex="13" ><b>Clear</b></button>
+          <button type="button" id="removeUser"  tabindex="14" ><b>Remove this user</b></button><br>
+        </form>
+
+      </div>
+
+      <div class="col-sm-3 item">
+        <table>
+          <tr>
+            <td colspan="2">
+        <h3><b>Stats:</b></h3>
+      </td>
+    </tr>
+      <tr>
+        <td colspan="2">
+         Total number of Users: 
+         <span id="allUsers"></span>
+      </td>
+      </tr>
+        <tr>
+          <td colspan="2">
+         Male users: <span id="males"></span></td>
+       </tr>
+        <tr>
+          <td colspan="2">
+         Females users: <span id="females"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+         Other users: <span id="others"></span></td>
+      </tr>
+      <tr>
+        <td colsspan="2">
+        Users between age:
+        </td>
+      </tr>
+      <tr><td><br></td><td><br></td></tr>
+      <tr>
+        <td>
+        Age From : 
+        <span id="ageFrom"></span>
+      </td>
+      <td>
+        <input type="range"  tabindex="15" min="18" max="60" value="18" id="fromAge" onchange="showAge(this.value,document.getElementById('ageFrom')); refreshStats()">
+        </td>
+      </tr>
+      <tr><td><br></td><td><br></td></tr>
+      <tr>
+        <td>
+        Age to : <span id="ageTo"></span>
+      </td>
+        <td>
+        <input type="range"  tabindex="16" min="18" max="60" value="18" id="toAge" onchange="showAge(this.value,document.getElementById('ageTo')); refreshStats()">
+      </td>
+    </tr>
+    <tr><td><br></td><td><br></td></tr>
+    <tr><td><br></td><td><br></td></tr>
+    <tr>
+      <td colspan="2">
+
+        <span id="fromToAge" ></span>
+      </td>
+    </tr>
+    <tr><td><br></td><td><br></td></tr>
+    <tr>
+      <td colspan="2">
+        Sort users by 
+        <select id="sortBy" tabindex="17">
+          <option value="age">Age/DOB</option>
+          <option value="name">Name</option>
+        </select>
+
+        in <select id="sortOrder" tabindex="18">
+          <option value="asc">accending</option>
+          <option value="desc">decending</option>
+        </select>
+
+        order.</td>
+      </tr>
+      <tr><td><br></td><td><br></td></tr>
+      <tr>
+        <td colspan="2">
+        <button id="sortUsers" onclick="sortUsers()"  tabindex="19">Sort !</button>
+      </td>
+  </tr>
+
+</table>
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-xs-12 item">
+
+        <h3><b>User Table:</b></h3>
+        <span id="UserCount"></span>
+        <table style="width:100%" class="usersTable">
+          <thead>
+            <tr>
+              <th>Sl No</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th colspan="2">Email</th>
+              <th>DOB</th>
+              <th>Blood Group</th>
+              <th>Hobbies</th>
+              <th>Age</th>
+              <th>Encrypted Password</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Footer</td>
+              <td>Footer</td>
+              <td>Footer</td>
+              <td colspan="2">Footer</td>
+              <td>Footer</td>
+              <td>Footer</td>
+              <td>Footer</td>
+              <td>Footer</td>
+              <td>Footer</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
