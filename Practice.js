@@ -320,4 +320,9 @@ $(document).ready(function() {
 
   loadUserData();
 
+  $("#submitButton").click(function(event){
+    event.preventDefault();
+    addUser();
+  });
+
 });
