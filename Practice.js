@@ -320,7 +320,8 @@ $(document).ready(function() {
 
   loadUserData();
 
-  $("#submitButton").click(function(event){
+  console.log("called1");
+  $("#my-form").submit(function(e){
     event.preventDefault();
     addUser();
   });

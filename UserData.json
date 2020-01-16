@@ -35,17 +35,6 @@ data=[
     },
 
     {
-        "name": "Sandy Shaha",
-        "sex": "other",
-        "email": "IamSandy@gmail.com",
-        "dob": "06/05/1997",
-        "hobbies": "Gardening",
-        "bloodGroup": "A-",
-        "age": "21",
-        "password": "IamSandy@420"
-    },
-
-    {
         "name": "Rajesh Menon",
         "sex": "male",
         "email": "menonmenonyoyo@gmail.com",
